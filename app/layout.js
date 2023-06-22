@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-[#eee] overflow-hidden w-full`}>
+      <body className={`bg-[#eee] overflow-x-hidden overflow-y-scroll w-full`}>
         <div className="max-w-[1500px] mx-auto relative" >
 
         <Header/>

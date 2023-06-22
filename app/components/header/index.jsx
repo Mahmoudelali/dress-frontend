@@ -1,6 +1,8 @@
 "use client"
 import Link from 'next/link'
 import React, { useState } from 'react'
+import logo from "../../assets/svg/logo.svg"
+import Image from 'next/image';
 
 const routes = [
   { href: "/new", label: "New Arrivals" },
@@ -22,7 +24,8 @@ const Header = () => {
   return (
     <header className={`fixed w-full max-w-[1500px] z-10 ${isMenuOpen&&"bg-white"} lg:bg-transparent transition-colors duration-500`}>
       <div className="flex flex-row px-6 py-4 lg:px-8 lg:py-6 justify-between items-center w-full lg:w-[70%] relative">
-        <div className="w-56 h-20 bg-gray-400 rounded-xl"></div>
+        <Image src={logo} alt="logo" width="300" height="200" className={`w-40 rounded-xl ${isMenuOpen&&"invert"}`}/>
+        {/* <div className="w-56 h-20 bg-gray-400 rounded-xl"></div> */}
         <button
           className="lg:hidden h-9 w-10"
           onClick={handleMenuToggle}
@@ -38,7 +41,7 @@ const Header = () => {
         >
           {routes.map((route, index) => {
             return (
-              <Link href={route.href} key={index} className="px-3 py-4 block">
+              <Link href={route.href} key={index} className="px-6 py-4 lg:px-4 block">
                 {route.label}
               </Link>
             );
